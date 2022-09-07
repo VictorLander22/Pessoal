@@ -1,0 +1,6 @@
+{
+    "board": "arduino:avr:uno",
+    "sketch": "SistemaDeSeguranca.ino",
+    "port": "COM3",
+    "output": "./build"
+}
