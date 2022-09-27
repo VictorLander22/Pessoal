@@ -36,7 +36,21 @@ char confirma = FALSE;
 char smov = FALSE;
 char buzzer = FALSE;
 #line 36 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\SistemaDeSeguranca.ino"
-int main(void);
+int main();
+#line 57 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\SistemaDeSeguranca.ino"
+char Confirma();
+#line 64 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\SistemaDeSeguranca.ino"
+char Smov();
+#line 72 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\SistemaDeSeguranca.ino"
+char Senha();
+#line 104 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\SistemaDeSeguranca.ino"
+char RedSenha();
+#line 135 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\SistemaDeSeguranca.ino"
+char Ativa();
+#line 162 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\SistemaDeSeguranca.ino"
+char Buzzer();
+#line 179 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\SistemaDeSeguranca.ino"
+char Desativa();
 #line 222 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\SistemaDeSeguranca.ino"
 void init_dsp(int l, int c);
 #line 226 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\SistemaDeSeguranca.ino"
@@ -46,7 +60,7 @@ void putnumber_i(int l, int c, long ni, int nd);
 #line 245 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\SistemaDeSeguranca.ino"
 void putnumber_f(int l, int c, float ni, int nd);
 #line 36 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\SistemaDeSeguranca.ino"
-int main(void)
+int main()
 {
     DDRB = 0xFF;
     init_dsp(2, 16);
@@ -67,14 +81,14 @@ int main(void)
     }
 }
 // Função para utilizar a tecla ‘*’ para confirmar a senha digitada
-char Confirma(void)
+char Confirma()
 {
     tecla = LeTecla();
     if (tecla == CONFIRMA)
         confirma = TRUE;
 }
 // Função para utilizar a tecla ‘#’ para simular a entrada ativa do Sensor de movimento
-char Smov(void)
+char Smov()
 {
     tecla = LeTecla();
     if (tecla == SMOV)
@@ -82,7 +96,7 @@ char Smov(void)
 }
 // Função para comparar a senha digitada com a senha salva, caso a senha esteja correta
 // senhaok → TRUE //, caso não retorna no display ‘Senha inválida’.
-char Senha(void)
+char Senha()
 {
     putmessage(0, 0, " DIGITE A SENHA");
     putmessage(1, 0, " ");
@@ -114,7 +128,7 @@ char Senha(void)
 // Função para redefinir a senha atual. Caso o usuário não saiba a senha atual não é possível
 // alterar a senha. Depois de informar a senha atual a próxima senha digitada será definida como
 // senha atual.
-char RedSenha(void)
+char RedSenha()
 {
     while (senhaok == FALSE)
     {
@@ -145,7 +159,7 @@ char RedSenha(void)
 // Função para ativar o funcionamento do alarme. Caso o usuário não saiba a senha atual não
 //é possível ativá-lo. A partir disso quando o sensor de movimento for ativado chama a função
 // Buzzer (rotina de alarme disparado)
-char Ativa(void)
+char Ativa()
 {
     while (senhaok == FALSE)
     {
@@ -172,7 +186,7 @@ char Ativa(void)
 
 // Função para ativar a rotina de alarme disparado. Liga o buzzer e enquanto a senha correta
 // não for digitada o alarme continua disparado.
-char Buzzer(void)
+char Buzzer()
 {
     buzzer = TRUE;
     LEDS |= _BV(VERMELHO2);
@@ -189,7 +203,7 @@ char Buzzer(void)
 }
 // Função para desativar o funcionamento do alarme. Caso o usuário não saiba a senha atual
 // não é possível desativá-lo.
-char Desativa(void)
+char Desativa()
 {
     while (senhaok == FALSE)
     {

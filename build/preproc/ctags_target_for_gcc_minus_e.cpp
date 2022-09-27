@@ -24,7 +24,7 @@ char tecla = 0;
 char confirma = 0;
 char smov = 0;
 char buzzer = 0;
-int main(void)
+int main()
 {
     
 # 38 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\SistemaDeSeguranca.ino" 3
@@ -49,14 +49,14 @@ int main(void)
     }
 }
 // Função para utilizar a tecla ‘*’ para confirmar a senha digitada
-char Confirma(void)
+char Confirma()
 {
     tecla = LeTecla();
     if (tecla == '*')
         confirma = 1;
 }
 // Função para utilizar a tecla ‘#’ para simular a entrada ativa do Sensor de movimento
-char Smov(void)
+char Smov()
 {
     tecla = LeTecla();
     if (tecla == '#')
@@ -64,7 +64,7 @@ char Smov(void)
 }
 // Função para comparar a senha digitada com a senha salva, caso a senha esteja correta
 // senhaok → TRUE //, caso não retorna no display ‘Senha inválida’.
-char Senha(void)
+char Senha()
 {
     putmessage(0, 0, " DIGITE A SENHA");
     putmessage(1, 0, " ");
@@ -96,7 +96,7 @@ char Senha(void)
 // Função para redefinir a senha atual. Caso o usuário não saiba a senha atual não é possível
 // alterar a senha. Depois de informar a senha atual a próxima senha digitada será definida como
 // senha atual.
-char RedSenha(void)
+char RedSenha()
 {
     while (senhaok == 0)
     {
@@ -127,7 +127,7 @@ char RedSenha(void)
 // Função para ativar o funcionamento do alarme. Caso o usuário não saiba a senha atual não
 //é possível ativá-lo. A partir disso quando o sensor de movimento for ativado chama a função
 // Buzzer (rotina de alarme disparado)
-char Ativa(void)
+char Ativa()
 {
     while (senhaok == 0)
     {
@@ -170,7 +170,7 @@ char Ativa(void)
 
 // Função para ativar a rotina de alarme disparado. Liga o buzzer e enquanto a senha correta
 // não for digitada o alarme continua disparado.
-char Buzzer(void)
+char Buzzer()
 {
     buzzer = 1;
     
@@ -203,7 +203,7 @@ char Buzzer(void)
 }
 // Função para desativar o funcionamento do alarme. Caso o usuário não saiba a senha atual
 // não é possível desativá-lo.
-char Desativa(void)
+char Desativa()
 {
     while (senhaok == 0)
     {
