@@ -143,7 +143,7 @@ char Ativa()
     putmessage(0, 0, " ALARME ");
     putmessage(1, 0, " ATIVADO ");
     LEDS = _BV(VERDE1);
-    while ((tecla = LeTecla()) != 'B' || (tecla = LeTecla()) != 'C')
+    while ((tecla = LeTecla()) != 'B' | (tecla = LeTecla()) != 'C')
     {
         Smov();
         if (smov == TRUE)
