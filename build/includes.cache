@@ -16,6 +16,11 @@
   },
   {
     "Sourcefile": "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\build\\sketch\\SistemaDeSeguranca.ino.cpp",
+    "Include": "EEPROM.h",
+    "Includepath": "C:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\libraries\\EEPROM\\src"
+  },
+  {
+    "Sourcefile": "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\build\\sketch\\SistemaDeSeguranca.ino.cpp",
     "Include": "",
     "Includepath": null
   },

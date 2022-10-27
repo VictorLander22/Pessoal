@@ -13,4 +13,5 @@ c:\Users\User\Documents\Vscode\SistemaDeSeguranca\build\sketch\SistemaDeSeguranc
  C:\Program\ Files\ (x86)\Arduino\hardware\arduino\avr\variants\standard/pins_arduino.h \
  c:\Users\User\Documents\Vscode\SistemaDeSeguranca\build\sketch\Header.h \
  C:\Program\ Files\ (x86)\Arduino\libraries\LiquidCrystal\src/LiquidCrystal.h \
- C:\Program\ Files\ (x86)\Arduino\hardware\arduino\avr\cores\arduino/Print.h
+ C:\Program\ Files\ (x86)\Arduino\hardware\arduino\avr\cores\arduino/Print.h \
+ C:\Program\ Files\ (x86)\Arduino\hardware\arduino\avr\libraries\EEPROM\src/EEPROM.h

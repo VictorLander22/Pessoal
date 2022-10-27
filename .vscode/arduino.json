@@ -1,5 +1,5 @@
 {
-    "board": "arduino:avr:unowifi",
+    "board": "arduino:avr:uno",
     "sketch": "SistemaDeSeguranca.ino",
     "port": "COM4",
     "output": "./build",

@@ -4,6 +4,8 @@
 #include <LiquidCrystal.h>
 #include <avr/interrupt.h>
 
+#include <EEPROM.h>
+
 LiquidCrystal lcd(A0, A1, A2, A3, A4, A5);
 
 #define LEDS PORTB
@@ -19,8 +21,8 @@ LiquidCrystal lcd(A0, A1, A2, A3, A4, A5);
 #define FALSE 0
 #define SMOV '#'
 
-static int senha[2] = {0, 0};
-static int senhaaux[2] = {0, 0};
+static int senha[2];
+static int senhaaux[2];
 char digito[2] = {0, 0};
 char estado = 0;
 char senhaok = 0;
