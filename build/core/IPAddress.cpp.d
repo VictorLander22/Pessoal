@@ -1,4 +1,4 @@
-c:\Users\User\Documents\Vscode\Sistema\ de\ seguranca\build\core\IPAddress.cpp.o: \
+c:\Users\User\Documents\Vscode\SistemaDeSeguranca\build\core\IPAddress.cpp.o: \
  C:\Program\ Files\ (x86)\Arduino\hardware\arduino\avr\cores\arduino\IPAddress.cpp \
  C:\Program\ Files\ (x86)\Arduino\hardware\arduino\avr\cores\arduino/Arduino.h \
  C:\Program\ Files\ (x86)\Arduino\hardware\arduino\avr\cores\arduino/binary.h \

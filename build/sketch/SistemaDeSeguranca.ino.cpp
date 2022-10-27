@@ -1,69 +1,41 @@
 #include <Arduino.h>
-#line 1 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\SistemaDeSeguranca.ino"
-#include <avr/io.h>
-#include <util/delay.h>
-#include <LiquidCrystal.h>
-#include <avr/interrupt.h>
+#line 1 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\SistemaDeSeguranca.ino"
 
-LiquidCrystal lcd(A0, A1, A2, A3, A4, A5);
 
-#define LEDS PORTB
-#define BUZZER PORTB0
-#define VERMELHO2 PORTB2
-#define VERDE1 PORTB3
-#define VERMELHO1 PORTB5
-#define ATIVAR 'A'
-#define DESATIVAR 'B'
-#define REDEFINIR 'C'
-#define CONFIRMA '*'
-#define TRUE 1
-#define FALSE 0
-#define SMOV '#'
-//  Sensor de movimento
-
-static int senha[2] = {0, 0};
-static int senhaaux[2] = {0, 0};
-char digito[2] = {0, 0};
-char estado = 0;
-char senhaok = 0;
-char tecla = 0;
-char confirma = 0;
-char smov = 0;
-char buzzer = 0;
-
-#line 32 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\SistemaDeSeguranca.ino"
+#include "Header.h"
+#line 4 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\SistemaDeSeguranca.ino"
 void setup();
-#line 38 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\SistemaDeSeguranca.ino"
+#line 10 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\SistemaDeSeguranca.ino"
 void loop();
-#line 2 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\display.ino"
+#line 2 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\display.ino"
 void init_dsp(int l, int c);
-#line 6 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\display.ino"
+#line 6 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\display.ino"
 void putmessage(int l, int c, char *msg);
-#line 11 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\display.ino"
+#line 11 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\display.ino"
 void putnumber_i(int l, int c, long ni, int nd);
-#line 23 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\display.ino"
+#line 23 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\display.ino"
 void putnumber_f(int l, int c, float ni, int nd);
-#line 1 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino"
+#line 1 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino"
 void config();
-#line 9 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino"
+#line 9 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino"
 void loopTeclado(void);
-#line 22 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino"
+#line 22 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino"
 char Confirma(void);
-#line 29 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino"
+#line 29 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino"
 char Smov(void);
-#line 36 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino"
+#line 36 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino"
 char Senha(void);
-#line 66 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino"
+#line 66 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino"
 char RedSenha(void);
-#line 95 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino"
+#line 95 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino"
 char Ativa(void);
-#line 122 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino"
+#line 122 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino"
 char Buzzer(void);
-#line 138 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino"
+#line 138 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino"
 char Desativa(void);
-#line 152 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino"
+#line 152 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino"
 char LeTecla(void);
-#line 32 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\SistemaDeSeguranca.ino"
+#line 4 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\SistemaDeSeguranca.ino"
 void setup()
 {
     Serial.begin(9600);
@@ -73,10 +45,10 @@ void setup()
 void loop()
 {
     loopTeclado();
-    Serial.print("LOOP");
+    // Serial.print("Victor");
 }
 
-#line 1 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\display.ino"
+#line 1 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\display.ino"
 /******* PARA USO DO DISPLAY ***********************/
 void init_dsp(int l, int c)
 {
@@ -104,7 +76,7 @@ void putnumber_f(int l, int c, float ni, int nd)
     lcd.setCursor(c, l);
     lcd.print(ni, nd);
 }
-#line 1 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino"
+#line 1 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino"
 void config()
 {
     DDRB = 0xFF;

@@ -1,4 +1,4 @@
-c:\Users\User\Documents\Vscode\Sistema\ de\ seguranca\build\core\HardwareSerial3.cpp.o: \
+c:\Users\User\Documents\Vscode\SistemaDeSeguranca\build\core\HardwareSerial3.cpp.o: \
  C:\Program\ Files\ (x86)\Arduino\hardware\arduino\avr\cores\arduino\HardwareSerial3.cpp \
  C:\Program\ Files\ (x86)\Arduino\hardware\arduino\avr\cores\arduino\Arduino.h \
  C:\Program\ Files\ (x86)\Arduino\hardware\arduino\avr\cores\arduino\binary.h \

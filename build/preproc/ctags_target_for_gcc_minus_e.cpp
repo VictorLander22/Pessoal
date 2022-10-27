@@ -1,25 +1,7 @@
-# 1 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\SistemaDeSeguranca.ino"
-# 2 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\SistemaDeSeguranca.ino" 2
-# 3 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\SistemaDeSeguranca.ino" 2
-# 4 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\SistemaDeSeguranca.ino" 2
-# 5 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\SistemaDeSeguranca.ino" 2
+# 1 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\SistemaDeSeguranca.ino"
 
 
-# 6 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\SistemaDeSeguranca.ino"
-LiquidCrystal lcd(A0, A1, A2, A3, A4, A5);
-# 20 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\SistemaDeSeguranca.ino"
-//  Sensor de movimento
-
-static int senha[2] = {0, 0};
-static int senhaaux[2] = {0, 0};
-char digito[2] = {0, 0};
-char estado = 0;
-char senhaok = 0;
-char tecla = 0;
-char confirma = 0;
-char smov = 0;
-char buzzer = 0;
-
+# 4 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\SistemaDeSeguranca.ino" 2
 void setup()
 {
     Serial.begin(9600);
@@ -29,9 +11,9 @@ void setup()
 void loop()
 {
     loopTeclado();
-    Serial.print("LOOP");
+    // Serial.print("Victor");
 }
-# 1 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\display.ino"
+# 1 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\display.ino"
 /******* PARA USO DO DISPLAY ***********************/
 void init_dsp(int l, int c)
 {
@@ -59,13 +41,13 @@ void putnumber_f(int l, int c, float ni, int nd)
     lcd.setCursor(c, l);
     lcd.print(ni, nd);
 }
-# 1 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino"
+# 1 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino"
 void config()
 {
     
-# 3 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino" 3
+# 3 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino" 3
    (*(volatile uint8_t *)((0x04) + 0x20)) 
-# 3 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino"
+# 3 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino"
         = 0xFF;
     init_dsp(2, 16);
     putmessage(0, 0, (char *)" ALARME ");
@@ -169,13 +151,13 @@ char Ativa(void)
     putmessage(0, 0, (char *)" ALARME ");
     putmessage(1, 0, (char *)" ATIVADO ");
     
-# 105 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino" 3
+# 105 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino" 3
    (*(volatile uint8_t *)((0x05) + 0x20)) 
-# 105 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino"
+# 105 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino"
          = 
-# 105 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino" 3
+# 105 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino" 3
            (1 << (3))
-# 105 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino"
+# 105 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino"
                       ;
 
     while ((tecla = LeTecla()) != 'B' | (tecla = LeTecla()) != 'C')
@@ -184,13 +166,13 @@ char Ativa(void)
         if (smov == 1)
         {
             
-# 112 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino" 3
+# 112 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino" 3
            (*(volatile uint8_t *)((0x05) + 0x20)) 
-# 112 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino"
+# 112 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino"
                  = 
-# 112 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino" 3
+# 112 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino" 3
                    (1 << (5))
-# 112 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino"
+# 112 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino"
                               ;
             putmessage(0, 0, (char *)" ALARME ");
             putmessage(1, 0, (char *)" DISPARADO ");
@@ -205,13 +187,13 @@ char Buzzer(void)
 {
     buzzer = 1;
     
-# 125 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino" 3
+# 125 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino" 3
    (*(volatile uint8_t *)((0x05) + 0x20)) 
-# 125 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino"
+# 125 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino"
          |= 
-# 125 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino" 3
+# 125 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino" 3
             (1 << (2))
-# 125 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino"
+# 125 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino"
                        ;
     while (senhaok == 0)
     {
@@ -221,13 +203,13 @@ char Buzzer(void)
     senhaok = 0;
     smov = 0;
     
-# 133 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino" 3
+# 133 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino" 3
    (*(volatile uint8_t *)((0x05) + 0x20)) 
-# 133 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino"
+# 133 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino"
          = 
-# 133 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino" 3
+# 133 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino" 3
            (1 << (3))
-# 133 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino"
+# 133 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino"
                       ;
     putmessage(0, 0, (char *)" ALARME ");
     putmessage(1, 0, (char *)" ATIVADO ");
@@ -243,17 +225,17 @@ char Desativa(void)
     putmessage(0, 0, (char *)"ALARME ");
     putmessage(1, 0, (char *)"DESATIVADO ");
     
-# 147 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino" 3
+# 147 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino" 3
    (*(volatile uint8_t *)((0x05) + 0x20)) 
-# 147 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino"
+# 147 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino"
          = 
-# 147 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino" 3
+# 147 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino" 3
            (1 << (5)) 
-# 147 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino"
+# 147 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino"
                        | 
-# 147 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino" 3
+# 147 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino" 3
                          (1 << (3))
-# 147 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino"
+# 147 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino"
                                     ;
     senhaok = 0;
 }
@@ -268,76 +250,76 @@ char LeTecla(void)
                                    {'*', '0', '#', 'D'}};
 
     
-# 160 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino" 3
+# 160 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino" 3
    (*(volatile uint8_t *)((0x0A) + 0x20)) 
-# 160 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino"
+# 160 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino"
         = 0x0F;
     
-# 161 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino" 3
+# 161 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino" 3
    (*(volatile uint8_t *)((0x0B) + 0x20)) 
-# 161 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino"
+# 161 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino"
          = 0xFF;
     for (n = 0; n < 4; n++)
     {
         
-# 164 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino" 3
+# 164 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino" 3
        (*(volatile uint8_t *)((0x0B) + 0x20)) 
-# 164 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino"
+# 164 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino"
               &= ~
-# 164 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino" 3
+# 164 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino" 3
                   (1 << (
-# 164 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino"
+# 164 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino"
                   n
-# 164 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino" 3
+# 164 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino" 3
                   ))
-# 164 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino"
+# 164 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino"
                         ;
         linha = 
-# 165 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino" 3
+# 165 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino" 3
                (*(volatile uint8_t *)((0x09) + 0x20)) 
-# 165 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino"
+# 165 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino"
                      >> 4;
         for (i = 0; i < 4; i++)
         {
             if (!(linha & 
-# 168 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino" 3
+# 168 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino" 3
                          (1 << (
-# 168 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino"
+# 168 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino"
                          i
-# 168 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino" 3
+# 168 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino" 3
                          ))
-# 168 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino"
+# 168 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino"
                                ))
             {
                 tecla = teclado[i][n];
                 while (!((
-# 171 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino" 3
+# 171 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino" 3
                          (*(volatile uint8_t *)((0x09) + 0x20)) 
-# 171 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino"
+# 171 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino"
                                >> 4) & 
-# 171 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino" 3
+# 171 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino" 3
                                        (1 << (
-# 171 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino"
+# 171 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino"
                                        i
-# 171 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino" 3
+# 171 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino" 3
                                        ))
-# 171 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino"
+# 171 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino"
                                              ))
                     ;
             }
         }
         
-# 175 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino" 3
+# 175 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino" 3
        (*(volatile uint8_t *)((0x0B) + 0x20)) 
-# 175 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino"
+# 175 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino"
               |= 
-# 175 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino" 3
+# 175 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino" 3
                  (1 << (
-# 175 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino"
+# 175 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino"
                  n
-# 175 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino" 3
+# 175 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino" 3
                  ))
-# 175 "c:\\Users\\User\\Documents\\Vscode\\Sistema de seguranca\\tecladobuzzer.ino"
+# 175 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino"
                        ;
     }
     return (tecla);

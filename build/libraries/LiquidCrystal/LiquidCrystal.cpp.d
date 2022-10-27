@@ -1,4 +1,4 @@
-c:\Users\User\Documents\Vscode\Sistema\ de\ seguranca\build\libraries\LiquidCrystal\LiquidCrystal.cpp.o: \
+c:\Users\User\Documents\Vscode\SistemaDeSeguranca\build\libraries\LiquidCrystal\LiquidCrystal.cpp.o: \
  C:\Program\ Files\ (x86)\Arduino\libraries\LiquidCrystal\src\LiquidCrystal.cpp \
  C:\Program\ Files\ (x86)\Arduino\libraries\LiquidCrystal\src\LiquidCrystal.h \
  C:\Program\ Files\ (x86)\Arduino\hardware\arduino\avr\cores\arduino/Print.h \
