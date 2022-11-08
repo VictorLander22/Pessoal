@@ -6,12 +6,15 @@ void setup()
 {
     Serial.begin(9600);
     config();
+    delay(5000);
+    Serial.print(senha[0]);
+    Serial.println(senha[1]);
 }
 
 void loop()
 {
     loopTeclado();
-    // printMemoria();
+    printMemoria();
 
     delay(5000);
 
