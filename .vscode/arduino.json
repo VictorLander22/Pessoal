@@ -1,7 +1,7 @@
 {
     "board": "arduino:avr:uno",
     "sketch": "SistemaDeSeguranca.ino",
-    "port": "COM4",
+    "port": "COM3",
     "output": "./build",
     "programmer": "arduino:avrispmkii"
 }

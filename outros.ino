@@ -1,7 +1,8 @@
 void printMemoria()
 {
-    Serial.print(F("- SRAM left: "));
-    Serial.println(freeRam());
+    Serial.print(F("- SRAM left: ("));
+    Serial.print(freeRam());
+    Serial.println(")");
 }
 
 int freeRam()

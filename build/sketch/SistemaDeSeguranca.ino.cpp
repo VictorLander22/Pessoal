@@ -6,12 +6,12 @@
 #include "Header.h"
 #line 5 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\SistemaDeSeguranca.ino"
 void setup();
-#line 11 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\SistemaDeSeguranca.ino"
+#line 14 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\SistemaDeSeguranca.ino"
 void loop();
 #line 3 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\Eeprom.ino"
 void configEeprom();
 #line 24 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\Eeprom.ino"
-void alterarSenha(u_int8t n1, u_int8t n2);
+void alterarSenha(uint8_t n1, uint8_t n2);
 #line 2 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\display.ino"
 void init_dsp(int l, int c);
 #line 6 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\display.ino"
@@ -22,7 +22,7 @@ void putnumber_i(int l, int c, long ni, int nd);
 void putnumber_f(int l, int c, float ni, int nd);
 #line 1 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\outros.ino"
 void printMemoria();
-#line 7 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\outros.ino"
+#line 8 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\outros.ino"
 int freeRam();
 #line 1 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\tecladobuzzer.ino"
 void config();
@@ -49,6 +49,9 @@ void setup()
 {
     Serial.begin(9600);
     config();
+    delay(5000);
+    Serial.print(senha[0]);
+    Serial.println(senha[1]);
 }
 
 void loop()
@@ -56,11 +59,7 @@ void loop()
     loopTeclado();
     printMemoria();
 
-    Serial.print(senha[0]);
-    Serial.println(senha[1]);
-
     delay(5000);
-    // alterarSenha();
 
     // para resetar toda a memoria EEPROM descomente a funcao abaixo
     // for (int i = 0; i < 1025; i++)
@@ -92,7 +91,7 @@ void configEeprom()
  * @param n1 recebe o senha[0]
  * @param n2 recebe o senha[1]
  */
-void alterarSenha(u_int8t n1, u_int8t n2)
+void alterarSenha(uint8_t n1, uint8_t n2)
 {
     EEPROM.begin();
 
@@ -132,8 +131,9 @@ void putnumber_f(int l, int c, float ni, int nd)
 #line 1 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\outros.ino"
 void printMemoria()
 {
-    Serial.print(F("- SRAM left: "));
-    Serial.println(freeRam());
+    Serial.print(F("- SRAM left: ("));
+    Serial.print(freeRam());
+    Serial.println(")");
 }
 
 int freeRam()

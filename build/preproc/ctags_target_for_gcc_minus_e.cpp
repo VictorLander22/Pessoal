@@ -7,6 +7,9 @@ void setup()
 {
     Serial.begin(9600);
     config();
+    delay(5000);
+    Serial.print(senha[0]);
+    Serial.println(senha[1]);
 }
 
 void loop()
@@ -14,11 +17,7 @@ void loop()
     loopTeclado();
     printMemoria();
 
-    Serial.print(senha[0]);
-    Serial.println(senha[1]);
-
     delay(5000);
-    // alterarSenha();
 
     // para resetar toda a memoria EEPROM descomente a funcao abaixo
     // for (int i = 0; i < 1025; i++)
@@ -56,7 +55,7 @@ void configEeprom()
 
  */
 # 24 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\Eeprom.ino"
-void alterarSenha(u_int8t n1, u_int8t n2)
+void alterarSenha(uint8_t n1, uint8_t n2)
 {
     EEPROM.begin();
 
@@ -100,12 +99,13 @@ void printMemoria()
 # 3 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\outros.ino" 3
                 (__extension__({static const char __c[] __attribute__((__progmem__)) = (
 # 3 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\outros.ino"
-                "- SRAM left: "
+                "- SRAM left: ("
 # 3 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\outros.ino" 3
                 ); &__c[0];}))
 # 3 "c:\\Users\\User\\Documents\\Vscode\\SistemaDeSeguranca\\outros.ino"
                 )));
-    Serial.println(freeRam());
+    Serial.print(freeRam());
+    Serial.println(")");
 }
 
 int freeRam()

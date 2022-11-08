@@ -21,7 +21,7 @@ void configEeprom()
  * @param n1 recebe o senha[0]
  * @param n2 recebe o senha[1]
  */
-void alterarSenha(u_int8t n1, u_int8t n2)
+void alterarSenha(uint8_t n1, uint8_t n2)
 {
     EEPROM.begin();
 
